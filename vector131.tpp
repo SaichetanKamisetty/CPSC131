@@ -1,24 +1,26 @@
-#include "vector131.h"
 #include <algorithm>
 #include <initializer_list>
 
-
-template <typename T> vector131::vector131() {
+template <typename T> 
+vector131<T>::vector131() {
      T array[0];
      numPresent = 0;
 }
 
-template <typename T> vector131::vector131(std::initializer_list<T> arr) {
+template <typename T> 
+vector131<T>::vector131(std::initializer_list<T> arr) {
     array = new T[arr.size()];
     std::copy(arr.begin(), arr.end(), array);
     numPresent = arr.size();
 }
 
-template <typename T> T& vector131::operator[](int index) {
+template <typename T> 
+T& vector131<T>::operator[](int index) {
     return array[index];
 }
 
-template <typename T> void vector131::push_front(T val) {
+template <typename T> 
+void vector131<T>::push_front(T val) {
     int newSize = numPresent + 1;
     T* array2 = new T[newSize];
 
@@ -31,7 +33,8 @@ template <typename T> void vector131::push_front(T val) {
     numPresent = newSize;
 }
 
-template <typename T> void vector131::push_back(T val) {
+template <typename T> 
+void vector131<T>::push_back(T val) {
     int newSize = numPresent + 1;
     T* array2 = new T[newSize];
     std::copy(array, array + numPresent, array2);
@@ -43,7 +46,8 @@ template <typename T> void vector131::push_back(T val) {
     numPresent = newSize;
 }
 
-template <typename T> void vector131::pop_back() {
+template <typename T> 
+void vector131<T>::pop_back() {
     if (numPresent >= 1) {
         int newSize = numPresent - 1;
         T* array2 = new T[newSize];
@@ -55,7 +59,8 @@ template <typename T> void vector131::pop_back() {
     }
 }
 
-template <typename T> void vector131::resize(int val) {
+template <typename T> 
+void vector131<T>::resize(int val) {
     int newSize = val;
     T* array2 = new T[newSize];
     
@@ -71,7 +76,8 @@ template <typename T> void vector131::resize(int val) {
     numPresent = newSize;
 }
 
-template <typename T> void vector131::insert(int pos, T val) {
+template <typename T> 
+void vector131<T>::insert(int pos, T val) {
     if (pos == 0) {
         this->push_front(val);
     } else if (pos == numPresent) {
@@ -90,6 +96,7 @@ template <typename T> void vector131::insert(int pos, T val) {
     }
 }
 
-template <typename T> void vector::clear() {
+template <typename T> 
+void vector131<T>::clear() {
     // continue next time
 }
