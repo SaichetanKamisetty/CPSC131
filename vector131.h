@@ -12,9 +12,10 @@ template<typename T> class vector131 {
         // Constructor, takes elements using direct 
         vector131(std::initializer_list<T> arr);
         ~vector131() { delete[] array; }
-    // Operator Overload
+        // Operator Overload
         T& operator[](int index);
-    // Member Functions
+        // Member Functions
+        void elements();
         void push_front(T val);
         void push_back(T val);
         void pop_back();
@@ -23,7 +24,7 @@ template<typename T> class vector131 {
         void clear();
         int size() {return numPresent;}
     private:
-        T* array;
+        T* array = nullptr;
         int numPresent;
 };
 
