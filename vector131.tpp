@@ -20,6 +20,14 @@ T& vector131<T>::operator[](int index) {
 }
 
 template <typename T> 
+void vector131<T>::elements() {
+    for (int i = 0; i < numPresent; i++) {
+        std::cout << array[i] << " ";
+    } 
+    std::cout << std::endl;
+}
+
+template <typename T> 
 void vector131<T>::push_front(T val) {
     int newSize = numPresent + 1;
     T* array2 = new T[newSize];
@@ -92,11 +100,14 @@ void vector131<T>::insert(int pos, T val) {
         delete[] array;
         array = array2;
         
-        numPresent = newSize;  // This needs to be adjusted to match.
+        numPresent = newSize;
     }
 }
 
 template <typename T> 
 void vector131<T>::clear() {
-    // continue next time
+    numPresent = 0;
+    T* array2 = new T[numPresent];
+    delete[] array;
+    array = array2;
 }
