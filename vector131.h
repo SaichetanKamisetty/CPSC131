@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <initializer_list>
 
-
 template<typename T> class vector131 {
     public: 
 
@@ -22,10 +21,12 @@ template<typename T> class vector131 {
         void resize(int val);
         void insert(int pos, T val);
         void clear();
-        int getNumPresent() {return numPresent;}
+        int size() {return numPresent;}
     private:
         T* array;
         int numPresent;
 };
+
+#include "vector131.tpp"
 
 #endif
