@@ -1,11 +1,15 @@
 #include <algorithm>
 #include <initializer_list>
 
+// Setting array size = 0.
+
 template <typename T> 
 vector131<T>::vector131() {
      T array[0];
      numPresent = 0;
 }
+
+// Returns the elements in the array
 
 template <typename T> 
 vector131<T>::vector131(std::initializer_list<T> arr) {
@@ -14,10 +18,14 @@ vector131<T>::vector131(std::initializer_list<T> arr) {
     numPresent = arr.size();
 }
 
+// Return array from index operator.
+
 template <typename T> 
 T& vector131<T>::operator[](int index) {
     return array[index];
 }
+
+// Function loops through the 'numPresent' vector.
 
 template <typename T> 
 void vector131<T>::elements() {
